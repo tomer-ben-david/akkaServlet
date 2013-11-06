@@ -18,6 +18,15 @@ which will enable you to use import DistributedPubSubMediator class.
 You need to have a class named ScalatraBootsrap at the root of your project (src/scala) scalatra will search for this file by default.
 This file should initialize your actor system (as can be seen in example).
 
+to run two nodes in the cluster see following configuration with intellij
+
+![alt tag](doc/images/tomcat-akka-cluster-2551.png)
+
+and for the second node:
+
+![alt tag](doc/images/tomcat-akka-cluster-2552.png)
+
+
 A sample for the Typesafe Stack (http://typesafe.com/stack).
 
 Akka 2.0 sample project using Java and Maven to implement a simple asynchronous servlet.
