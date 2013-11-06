@@ -1,3 +1,8 @@
+Going reactive
+
+There is a great course currently held in coursera reactive programming.
+In anyway sometimes your system is already based on tomcat so you would not want akka as standalone (the operations team alreayd knows to monitor tomcat), in these cases you want akka on top of tomcat, if your system is also built on maven you also want your maven to be aware of akka (instead of using plain sbt).
+
 Using akka cluster in tomcat7 with maven and scala to publish a message among all tomcat nodes.
 
 Preparing your project for akka cluster and publish subscribe.
