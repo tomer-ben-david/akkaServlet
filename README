@@ -20,12 +20,11 @@ This file should initialize your actor system (as can be seen in example).
 
 to run two nodes in the cluster see following configuration with intellij
 
-![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
-![alt text](https://github.com/tomer-ben-david/akkaServlet/raw/master/doc/images/tomcat-akka-cluster-2551.png "tomcat server on 2551")
+![alt text 1](https://37e593ab-a-62cb3a1a-s-sites.googlegroups.com/site/thedevtips/Home/images/tomcat-akka-cluster-2551.png "tomcat server on 2551")
 
 and for the second node:
 
-![alt text](https://github.com/tomer-ben-david/akkaServlet/raw/master/doc/images/tomcat-akka-cluster-2552.png "tomcat server on 2552")
+![alt text 2](https://github.com/tomer-ben-david/akkaServlet/raw/master/doc/images/tomcat-akka-cluster-2552.png "tomcat server on 2552")
 
 
 A sample for the Typesafe Stack (http://typesafe.com/stack).
