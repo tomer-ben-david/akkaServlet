@@ -10,25 +10,7 @@
         This is a simple servlet using Akka actors to print "Hello, Darren"
     </description>
 
-    <servlet>
-        <servlet-name>ServletDemo</servlet-name>
-        <servlet-class>com.fortybeans.ServletDemo</servlet-class>
-        <async-supported>true</async-supported>
-    </servlet>
-
-    <servlet>
-        <servlet-name>PlainServletDemo</servlet-name>
-        <servlet-class>com.fortybeans.PlainServletDemo</servlet-class>
-        <async-supported>true</async-supported>
-    </servlet>
-
-    <servlet-mapping>
-        <servlet-name>ServletDemo</servlet-name>
-        <url-pattern>/</url-pattern>
-    </servlet-mapping>
-    
-    <servlet-mapping>
-        <servlet-name>PlainServletDemo</servlet-name>
-        <url-pattern>/plain</url-pattern>
-    </servlet-mapping>
+    <listener>
+        <listener-class>org.scalatra.servlet.ScalatraListener</listener-class>
+    </listener>
 </web-app> 
