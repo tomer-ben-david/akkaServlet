@@ -1,3 +1,14 @@
+Using akka cluster in tomcat7 with maven and scala to publish a message among all tomcat nodes.
+
+Preparing your project for akka cluster and publish subscribe.
+
+<dependency>
+	<groupId>com.typesafe.akka</groupId>
+	<artifactId>akka-contrib_2.10</artifactId>
+	<version>2.1.0</version>
+</dependency>
+            
+
 A sample for the Typesafe Stack (http://typesafe.com/stack).
 
 Akka 2.0 sample project using Java and Maven to implement a simple asynchronous servlet.
