@@ -5,7 +5,7 @@ import akka.actor.{Props, ActorSystem}
 import akka.cluster.Cluster
 import akka.cluster.ClusterEvent.ClusterDomainEvent
 import javax.servlet.ServletContext
-import org.example.akka.cluster.SimpleClusterListener
+import org.example.akka.cluster._
 import org.scalatra.LifeCycle
 
 /**
@@ -19,6 +19,8 @@ class ScalatraBootstrap extends LifeCycle {
 
   // Create an Akka system
   val system = ActorSystem("ClusterSystem")
+  val subscriber = system.actorOf(Props[Subscriber], "subscriber-%s".format(System.getProperty("akka.remote.netty.tcp.port")))
+  val publisher = system.actorOf(Props[Publisher], "publisher-%s".format(System.getProperty("akka.remote.netty.tcp.port")))
   val clusterListener = system.actorOf(Props[SimpleClusterListener],
     name = "clusterListener")
 
@@ -26,6 +28,7 @@ class ScalatraBootstrap extends LifeCycle {
 
   override def init(context: ServletContext) {
     println("starting")
+    context.mount(new ActorApp(system, publisher), "/*")
   }
 
   override def destroy(context:ServletContext) {

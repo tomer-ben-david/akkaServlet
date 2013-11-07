@@ -10,16 +10,17 @@ import akka.contrib.pattern.{DistributedPubSubExtension, DistributedPubSubMediat
 class Subscriber extends Actor with ActorLogging {
   import DistributedPubSubMediator.{ Subscribe, SubscribeAck }
   val mediator = DistributedPubSubExtension(context.system).mediator
-  // subscribe to the topic named "content"
-  mediator ! Subscribe("content", self)
+  // subscribe to the topic named "topicA"
+  mediator ! Subscribe("topicA", self)
 
   def receive = {
-    case SubscribeAck(Subscribe("content", `self`)) ⇒
+    case SubscribeAck(Subscribe("topicA", `self`)) ⇒
       context become ready
   }
 
   def ready: Actor.Receive = {
     case s: String ⇒
-      log.info("Got {}", s)
+      val msg = s + " [Received at] %s".format(System.getProperty("akka.remote.netty.tcp.port"))
+      log.info(msg)
   }
 }
