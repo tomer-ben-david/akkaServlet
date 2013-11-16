@@ -11,6 +11,9 @@
 
 	<properties>
 		<akka.version>2.2.3</akka.version>
+        <scala.version.major>2.10</scala.version.major>
+        <scala.version.minor>0</scala.version.minor>
+        <scala.version>${scala.version.major}.${scala.version.minor}</scala.version>
 	</properties>
 
 
@@ -86,45 +89,51 @@
     <dependencies>
         <dependency>
             <groupId>com.typesafe.akka</groupId>
-            <artifactId>akka-actor_2.10</artifactId>
+            <artifactId>akka-actor_${scala.version.major}</artifactId>
             <version>${akka.version}</version>
         </dependency>
 
         <dependency>
             <groupId>com.typesafe.akka</groupId>
-            <artifactId>akka-cluster_2.10</artifactId>
+            <artifactId>akka-actor_${scala.version.major}</artifactId>
+            <version>${akka.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.typesafe.akka</groupId>
+            <artifactId>akka-cluster_${scala.version.major}</artifactId>
             <version>${akka.version}</version>
         </dependency>
         <dependency>
             <groupId>com.typesafe.akka</groupId>
-            <artifactId>akka-contrib_2.10</artifactId>
+            <artifactId>akka-contrib_${scala.version.major}</artifactId>
             <version>${akka.version}</version>
         </dependency>
 
         <dependency>
             <groupId>org.scala-lang</groupId>
             <artifactId>scala-library</artifactId>
-            <version>2.10.0</version>
+            <version>${scala.version}</version>
         </dependency>
         <dependency>
             <groupId>net.databinder.dispatch</groupId>
-            <artifactId>dispatch-core_2.10</artifactId>
+            <artifactId>dispatch-core_${scala.version.major}</artifactId>
             <version>0.9.5</version>
         </dependency>
 
         <dependency>
             <groupId>org.scalatra</groupId>
-            <artifactId>scalatra_2.10</artifactId>
+            <artifactId>scalatra_${scala.version.major}</artifactId>
             <version>2.2.1</version>
         </dependency>
         <dependency>
             <groupId>org.scalatra</groupId>
-            <artifactId>scalatra-scalate_2.10</artifactId>
+            <artifactId>scalatra-scalate_${scala.version.major}</artifactId>
             <version>2.2.1</version>
         </dependency>
         <dependency>
             <groupId>org.scalatra</groupId>
-            <artifactId>scalatra-specs2_2.10</artifactId>
+            <artifactId>scalatra-specs2_${scala.version.major}</artifactId>
             <version>2.2.1</version>
             <scope>test</scope>
         </dependency>

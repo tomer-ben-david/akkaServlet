@@ -2,6 +2,7 @@ package org.example.akka.cluster
 
 import akka.actor.{Actor, ActorLogging}
 import akka.contrib.pattern.{DistributedPubSubExtension, DistributedPubSubMediator}
+import org.example.akka.cluster.conf.Conf
 
 /**
  * @author tomerb
@@ -20,7 +21,7 @@ class Subscriber extends Actor with ActorLogging {
 
   def ready: Actor.Receive = {
     case s: String ⇒
-      val msg = s + " [Received at] %s".format(System.getProperty("akka.remote.netty.tcp.port"))
+      val msg = s + " [Received at] %s".format(Conf.nettyPort)
       log.info(msg)
   }
 }

@@ -1,8 +1,9 @@
 package org.example.akka.cluster
 
 import akka.contrib.pattern.{DistributedPubSubExtension, DistributedPubSubMediator}
-import akka.actor.Actor
+import akka.actor.{ActorRef, Actor}
 import java.util.Date
+import org.example.akka.cluster.conf.Conf
 
 /**
  * @author tomerb
@@ -10,11 +11,12 @@ import java.util.Date
  */
 class Publisher extends Actor {
   import DistributedPubSubMediator.Publish
-  // activate the extension
-  val mediator = DistributedPubSubExtension(context.system).mediator
+  val mediator = actiateExtension
+
+  def actiateExtension: ActorRef = DistributedPubSubExtension(context.system).mediator
 
   def receive = {
     case PublishMessage ⇒
-      mediator ! Publish("topicA", "ActorMesage [" + System.getProperty("akka.remote.netty.tcp.port") + "] -->")
+      mediator ! Publish("topicA", "ActorMesage [" + Conf.nettyPort + "] -->")
   }
 }
