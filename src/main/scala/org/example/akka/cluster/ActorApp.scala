@@ -9,7 +9,7 @@ import java.util.Date
 
 /**
  * @author tomerb
- *         Date: 11/6/13 Time: 12:57 PM
+ * Date: 11/6/13 Time: 12:57 PM
  */
 class ActorApp(system:ActorSystem, publisher:ActorRef) extends ScalatraServlet with FutureSupport {
 

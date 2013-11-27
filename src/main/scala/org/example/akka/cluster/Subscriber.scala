@@ -6,7 +6,7 @@ import org.example.akka.cluster.conf.Conf
 
 /**
  * @author tomerb
- *         Date: 11/6/13 Time: 12:04 PM
+ * Date: 11/6/13 Time: 12:04 PM
  */
 class Subscriber extends Actor with ActorLogging {
   import DistributedPubSubMediator.{ Subscribe, SubscribeAck }

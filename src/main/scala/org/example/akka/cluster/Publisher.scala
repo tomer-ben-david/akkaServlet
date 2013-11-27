@@ -7,7 +7,7 @@ import org.example.akka.cluster.conf.Conf
 
 /**
  * @author tomerb
- *         Date: 11/7/13 Time: 3:54 PM
+ * Date: 11/7/13 Time: 3:54 PM
  */
 class Publisher extends Actor {
   import DistributedPubSubMediator.Publish
