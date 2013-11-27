@@ -4,10 +4,10 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.fortybeans</groupId>
-	<artifactId>akka-cluster-example</artifactId>
+	<artifactId>akka-tomcat-cluster-example</artifactId>
 	<packaging>war</packaging>
 	<version>0.1-SNAPSHOT</version>
-	<name>akka-cluster-example</name>
+	<name>akka-tomcat-cluster-example</name>
 
 	<properties>
 		<akka.version>2.2.3</akka.version>
