@@ -1,9 +1,8 @@
 Going reactive (with the unfortunate tomcat7 and maven boilerplate)
 
-There is a great course currently held in coursera reactive programming.
-In anyway sometimes your system is already based on tomcat so you would not want akka as standalone (the operations team alreayd knows to monitor tomcat), in these cases you want akka on top of tomcat, if your system is also built on maven you also want your maven to be aware of akka (instead of using plain sbt).
+This project shows as an example using akka cluster in tomcat7 with maven and scala to publish a message among all tomcat nodes.
 
-Using akka cluster in tomcat7 with maven and scala to publish a message among all tomcat nodes.
+Why with tomcat? Sometimes your system is already based on tomcat so you would not want akka as standalone (ie. the operations team already knows to monitor tomcat), in these cases you want akka on top of tomcat, if your system is also built on maven you also want your maven to be aware of akka (instead of using plain sbt).
 
 Preparing your project for akka cluster and publish subscribe.
 
@@ -27,11 +26,10 @@ and for the second node:
 ![alt text 2](http://github.com/tomer-ben-david/akkaServlet/raw/master/doc/images/tomcat-akka-cluster-2552.png)
 
 
-A sample for the Typesafe Stack (http://typesafe.com/stack).
+Call http://localhost:8080/submit
 
-Akka 2.0 sample project using Java and Maven to implement a simple asynchronous servlet.
+to sumbit from first node to both nodes (its a topic).
 
-To run and test it use Maven invoke: 'mvn clean install' and then copy the WAR file from target to a Tomcat 7.0 or other Servlet 3.0-compliant container.
+Call http://localhost:8081/submit
 
-Call http://localhost:8080/akkaServlet-0.1-SNAPSHOT/ to test the Akka version
-Call http://localhost:8080/akkaServlet-0.1-SNAPSHOT/plain to test the plain old servlet version
+to submit from second node to both nodes..
